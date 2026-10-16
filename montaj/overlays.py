@@ -114,7 +114,7 @@ def write_captions(outdir):
         dur = t1 - t0
         n = int(round(dur * FPS))
         for f in range(n):
-            render_caption(kicker, main, f / FPS, dur, centered_title=(k == 3)).save(os.path.join(d, f"{f:04d}.png"))
+            render_caption(kicker, main, f / FPS, dur, centered_title=(cy < 1200)).save(os.path.join(d, f"{f:04d}.png"))
         meta.append((d, t0, cy - BOX_H // 2))
     return meta
 

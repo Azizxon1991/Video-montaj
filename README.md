@@ -29,3 +29,29 @@ python3 montaj/build.py <manba_videolar_papkasi> output/montaj.mp4 /tmp/montaj_w
 
 Talablar: `ffmpeg` (libzimg, vid.stab, libx264), Python 3 + `numpy`, `Pillow`.
 Yozuvlarni o'zgartirish: `montaj/overlays.py` dagi `CAPTIONS` ro'yxati.
+
+---
+
+# UJC Qoʻqon — Oʻzbekiston–Yaponiya markazi ochilishi
+
+Natija: **`output/ujc_qoqon.mp4`** — 1080×1920, 30 fps, 41 s, -14 LUFS.
+
+| Vaqt | Lavha |
+|---|---|
+| 0–4 s | Ochilish afishasi (karta ko'rinishida, xira fon, zoom-out) |
+| 4–8 s | Mehmonlarni non-tuz bilan kutib olish (chapdan o'ngga pan) |
+| 8–13 s | Tantanali marosim va nutq |
+| 13–17 s | Markaz bilan tanishuv |
+| 17–20 s | Hamkorlik uchrashuvi (bayroqlar) |
+| 20–28 s | Taqdimot, ko'rishishlar, esdalik suratlari |
+| 28–34 s | Jurnalistlar bilan suhbat (video, asl ovozi olib tashlangan, stabilizatsiya, HDR→SDR) |
+| 34–41 s | UJC logotipi animatsiyasi, shior, yaponcha nom |
+
+Musiqa (`montaj/ujc_music.py`): original, yapon "yo" pentatonikasi — koto (Karplus-Strong), taiko,
+pad, bass; drop/taiko zarblari kesimlarga moslangan, intervyu qismida sokin.
+Burchakda kichik UJC logotipi, animatsiyali yozuvlar, light leak, vinyetka, grain.
+
+```bash
+python3 montaj/ujc_build.py <manba_papka> output/ujc_qoqon.mp4 /tmp/ujc_work
+```
+Yozuvlar: `montaj/ujc_build.py` dagi `CAPTIONS`; rasm kadrlash/harakat: `SHOTS`.

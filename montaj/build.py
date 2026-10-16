@@ -182,9 +182,8 @@ def render_audio(work):
     return out
 
 
-def shake_expr():
-    """Impact nuqtalarida (4, 20, 24 s) zoom-punch + titrash, sub-pikselli."""
-    hits = [(120, 1.0), (600, 0.7), (720, 0.9)]
+def shake_expr(hits=((120, 1.0), (600, 0.7), (720, 0.9))):
+    """Impact nuqtalarida (kadr raqami, kuch) zoom-punch + titrash, sub-pikselli."""
     env = "+".join(f"{s}*gte(on,{f})*exp(-(on-{f})/5)" for f, s in hits)
     m = f"(W*0.035*({env}))"            # zoom-punch (chetlar ichkariga)
     dx = f"(14*({env})*sin(on*2.3))"
