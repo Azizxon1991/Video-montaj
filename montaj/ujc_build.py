@@ -118,14 +118,14 @@ PHOTO_GRADE = ("eq=contrast=1.05:saturation=1.07:gamma=0.99,"
                "colorbalance=rs=0.01:bs=-0.01:rm=0.015:bm=-0.015:rh=0.01:bh=-0.01,unsharp=5:5:0.4:5:5:0.0")
 
 
-def render_photo(path, start, end, dur, out):
+def render_photo(path, start, end, dur, out, ease="linear"):
     im = Image.open(path)
     iw, ih = im.size
     scale = min(1.0, 2400 / ih)
     sw, sh = int(iw * scale) // 2 * 2, int(ih * scale) // 2 * 2
     r0 = window_rect(iw, ih, *start)
     r1 = window_rect(iw, ih, *end)
-    vf = ",".join([f"scale={sw}:{sh}:flags=lanczos", "format=yuv444p", move_filter(r0, r1, dur),
+    vf = ",".join([f"scale={sw}:{sh}:flags=lanczos", "format=yuv444p", move_filter(r0, r1, dur, ease),
                    f"scale={W}:{H}:flags=lanczos", PHOTO_GRADE, "format=yuv420p", "setsar=1"])
     run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", path,
          "-vf", vf] + enc(out))

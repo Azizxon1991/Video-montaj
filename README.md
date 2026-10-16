@@ -55,3 +55,27 @@ Burchakda kichik UJC logotipi, animatsiyali yozuvlar, light leak, vinyetka, grai
 python3 montaj/ujc_build.py <manba_papka> output/ujc_qoqon.mp4 /tmp/ujc_work
 ```
 Yozuvlar: `montaj/ujc_build.py` dagi `CAPTIONS`; rasm kadrlash/harakat: `SHOTS`.
+
+---
+
+# Oʻzbekiston–Koreya tajriba almashish uchrashuvi
+
+Natija: **`output/koreya_uchrashuv.mp4`** — 1080×1920, 30 fps, 44 s, -14 LUFS. Faqat 12 ta rasmdan.
+
+| Vaqt | Lavha |
+|---|---|
+| 0–4 s | Kirish titri: "Tajriba almashish uchrashuvi", Oʻzbekiston/Koreya rangli chiziq |
+| 4–9 s | Mehmonlar tashrifi (darvozadan kirib kelish, kameraga yaqinlashish) |
+| 9–14 s | Hovlidagi suhbat |
+| 14–19 s | Turon Odob-Ilm binosi: peshtoqdan guruhga "tilt" reveal, sport maydoni |
+| 19–26.5 s | Maktab bilan tanishuv, koreyalik o'qituvchi, sinfxona |
+| 26.5–34 s | Davra suhbati: Koreya metodikasi, tajriba va fikr almashish |
+| 34–44 s | Ishtirokchilar titri, so'ng "TURON ODOB-ILM · Oʻzbekiston · Koreya" |
+
+Musiqa (`montaj/korea_music.py`): original — kayagum uslubidagi tor (vibrato "nonghyeon"),
+janggu barabani, pentatonika; titrlar qismida sokin yakun.
+
+```bash
+python3 montaj/korea_build.py <manba_papka> output/koreya_uchrashuv.mp4 /tmp/korea_work
+```
+Matnlar: `korea_build.py` dagi `CAPTIONS`, `PEOPLE`; rasm kadrlash: `SHOTS`.
